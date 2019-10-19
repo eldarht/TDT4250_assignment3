@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated courceList -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="courceList.presentation.CourceListModelWizardID"
+            name="%_UI_CourceListModelWizard_label"
+            class="courceList.presentation.CourceListModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CourceListModelFile.gif">
+         <description>%_UI_CourceListModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated courceList -->
+      <editor
+            id="courceList.presentation.CourceListEditorID"
+            name="%_UI_CourceListEditor_label"
+            icon="icons/full/obj16/CourceListModelFile.gif"
+            extensions="courcelist"
+            class="courceList.presentation.CourceListEditor"
+            contributorClass="courceList.presentation.CourceListActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<no.tdt4250.assignment1.model:Department
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:no.tdt4250.assignment1.model="platform:/resource/no.tdt4250.assignment1.model/model/courceList.ecore"
+    name="Department of Computer Science"
+    abbreviation="IDI">
+  <studyProgram
+      name="Applied Computer Science"
+      educationLevel="master"
+      nrOfYears="2"
+      abbreviation="macs">
+    <studyProgram
+        year="2016"/>
+    <studyProgram
+        year="2017"/>
+    <studyProgram
+        year="2018"/>
+    <studyProgram
+        year="2019"/>
+    <campus>Gjøvik</campus>
+  </studyProgram>
+  <studyProgram
+      name="Color in Science and Industry "
+      educationLevel="master"
+      nrOfYears="2"
+      abbreviation="COSI">
+    <studyProgram/>
+    <campus>Gjøvik</campus>
+  </studyProgram>
+  <studyProgram
+      name="Informatics"
+      educationLevel="master"
+      nrOfYears="2">
+    <studyProgram
+        year="2019">
+      <cource
+          name="Software"
+          startSemester="1">
+        <cource
+            cource="//@course.3/@corseSpecifications.0"
+            status="O"/>
+        <cource
+            cource="//@course.4/@corseSpecifications.0"
+            status="M2A"
+            year="1"/>
+        <cource
+            cource="//@course.7/@corseSpecifications.0"
+            status="M2A"
+            year="1"/>
+        <cource
+            cource="//@course.8/@corseSpecifications.0"
+            status="M2A"
+            year="1"/>
+        <cource
+            cource="//@course.9/@corseSpecifications.0"
+            status="VA"
+            year="1"/>
+        <cource
+            cource="//@course.10/@corseSpecifications.0"
+            status="VA"
+            year="1"/>
+        <cource
+            cource="//@course.11/@corseSpecifications.0"
+            status="M2A"
+            year="1"/>
+        <cource
+            cource="//@course.12/@corseSpecifications.0"
+            status="O"
+            year="1"/>
+        <cource
+            cource="//@course.13/@corseSpecifications.0"
+            status="O"
+            year="1"/>
+        <cource
+            cource="//@course.14/@corseSpecifications.0"
+            status="M2A"
+            year="1"/>
+        <cource
+            cource="//@course.15/@corseSpecifications.0"
+            status="O"
+            year="2"/>
+        <cource
+            cource="//@course.5/@corseSpecifications.0"
+            status="O"
+            year="2"/>
+        <cource
+            cource="//@course.15/@corseSpecifications.0"
+            status="O"
+            year="2"/>
+        <cource
+            cource="//@course.6/@corseSpecifications.0"
+            status="O"
+            year="2"/>
+      </cource>
+      <cource
+          name="Interaction Design, Game and Learning Technology"
+          startSemester="1">
+        <cource
+            cource="//@course.13/@corseSpecifications.0"
+            status="M2A"/>
+      </cource>
+      <cource
+          name="Databases and Search"
+          startSemester="1">
+        <cource
+            cource="//@course.14/@corseSpecifications.0"
+            status="M2A"/>
+      </cource>
+      <cource
+          name="Artificial Intelligence"
+          startSemester="1">
+        <cource
+            cource="//@course.13/@corseSpecifications.0"
+            status="M2A"/>
+        <furtherSpecialisation
+            name="Advanced Artificial Intelligence"
+            startSemester="3">
+          <cource
+              cource="//@course.4/@corseSpecifications.0"
+              status="M2A"/>
+        </furtherSpecialisation>
+      </cource>
+      <student
+          nr="473180"/>
+    </studyProgram>
+    <campus>Trondheim</campus>
+  </studyProgram>
+  <studyProgram
+      name="Computer Science"
+      educationLevel="phd"
+      nrOfYears="3">
+    <studyProgram/>
+    <campus>Gjøvik</campus>
+  </studyProgram>
+  <studyProgram
+      name="Information Technology"
+      nrOfYears="3">
+    <studyProgram/>
+    <campus>Trondheim</campus>
+  </studyProgram>
+  <studyProgram
+      name="Computer Science"
+      nrOfYears="3">
+    <studyProgram/>
+    <campus>Trondheim</campus>
+    <campus>Gjøvik</campus>
+  </studyProgram>
+  <studyProgram
+      name="Computer Science"
+      educationLevel="master"
+      nrOfYears="5">
+    <studyProgram/>
+    <campus>Trondheim</campus>
+  </studyProgram>
+  <studyProgram
+      name="Computer Science"
+      educationLevel="oneYear"
+      nrOfYears="1">
+    <studyProgram/>
+    <campus>Gjøvik</campus>
+  </studyProgram>
+  <studyProgram
+      name="Informatics"
+      nrOfYears="3">
+    <studyProgram/>
+    <campus>Trondheim</campus>
+  </studyProgram>
+  <studyProgram
+      name="Programming"
+      nrOfYears="3">
+    <studyProgram/>
+    <campus>Gjøvik</campus>
+  </studyProgram>
+  <course code="IMT4110"
+      name="Scientific Methodology and Communication"
+      location="Gjøvik">
+    <corseSpecifications
+        coordinator="//@professor.0"
+        specificationYear="2019"
+        language="English"
+        version="1.0"
+        credits="7.5">
+      <evaluationForm>
+        <exam
+            weight="100"
+            form="written"
+            lenght="4"/>
+      </evaluationForm>
+      <semester>autumn</semester>
+    </corseSpecifications>
+    <corseSpecifications
+        coordinator="//@professor.0"
+        specificationYear="2018"
+        language="English"
+        version="1.0"
+        credits="7.5">
+      <evaluationForm>
+        <exam
+            weight="100"
+            lenght="4"/>
+      </evaluationForm>
+      <semester>autumn</semester>
+    </corseSpecifications>
+    <corseSpecifications
+        coordinator="//@professor.0"
+        specificationYear="2017"
+        language="English"
+        version="1.0"
+        credits="7.5">
+      <evaluationForm>
+        <exam
+            weight="100"
+            lenght="4"/>
+      </evaluationForm>
+      <semester>autumn</semester>
+    </corseSpecifications>
+  </course>
+  <course code="IMT4886"
+      name="Applied Computer Science Project "
+      location="Gjøvik">
+    <corseSpecifications
+        coordinator="//@professor.1"
+        specificationYear="2019"
+        language="English"
+        version="1.0"
+        credits="7.5">
+      <evaluationForm
+          evaluationType="approved">
+        <work
+            weight="100"/>
+      </evaluationForm>
+      <semester>autumn</semester>
+    </corseSpecifications>
+    <corseSpecifications
+        coordinator="//@professor.1"
+        specificationYear="2016"
+        language="English"
+        version="1.0"
+        credits="7.5">
+      <evaluationForm
+          evaluationType="approved">
+        <work
+            weight="100"/>
+      </evaluationForm>
+      <semester>autumn</semester>
+    </corseSpecifications>
+  </course>
+  <course code="IMT4308"
+      name="Introduction to Research on Web Technologies">
+    <corseSpecifications
+        coordinator="//@professor.2"
+        specificationYear="2019"
+        language="English"
+        version="1.0"
+        credits="7.5">
+      <semester>autumn</semester>
+    </corseSpecifications>
+  </course>
+  <course code="TDT4175"
+      name="Information Systems">
+    <corseSpecifications
+        coordinator="//@professor.3"
+        specificationYear="2019"
+        language="English"
+        version="1.0"
+        credits="7.5">
+      <evaluationForm>
+        <exam
+            weight="80"
+            form="written"
+            lenght="4"/>
+        <work
+            weight="20"/>
+      </evaluationForm>
+      <semester>autumn</semester>
+    </corseSpecifications>
+  </course>
+  <course code="TDT4250"
+      name="Advanced Software Design">
+    <corseSpecifications
+        coordinator="//@professor.4"
+        specificationYear="2019"
+        language="English, Norwegian"
+        version="1.0"
+        credits="7.5">
+      <evaluationForm>
+        <exam
+            weight="70"
+            form="written"
+            lenght="4"/>
+        <work
+            weight="30"/>
+      </evaluationForm>
+      <semester>autumn</semester>
+    </corseSpecifications>
+  </course>
+  <course code="IT3901"
+      name="Informatics Postgraduate Thesis: Software ">
+    <corseSpecifications
+        coordinator="//@professor.13"
+        specificationYear="2019"
+        version="1.0"
+        credits="60.0">
+      <semester>autumn</semester>
+    </corseSpecifications>
+  </course>
+  <course code="IT3901"
+      name="Informatics Postgraduate Thesis: Software">
+    <corseSpecifications
+        coordinator="//@professor.13"
+        specificationYear="2019"
+        version="1.0">
+      <semester>spring</semester>
+    </corseSpecifications>
+  </course>
+  <course code="TDT4252"
+      name="Enterprise Architecture for Enterprise Innovation">
+    <corseSpecifications
+        coordinator="//@professor.5"
+        specificationYear="2019"
+        language="English"
+        version="1.0"
+        credits="7.5">
+      <semester>autumn</semester>
+    </corseSpecifications>
+  </course>
+  <course code="TDT4165"
+      name="Programming Languages">
+    <corseSpecifications
+        coordinator="//@professor.6"
+        specificationYear="2019"
+        language="English"
+        version="1.0"
+        credits="7.5">
+      <semester>autumn</semester>
+    </corseSpecifications>
+  </course>
+  <course code="TDT4117"
+      name="Information Retrieval">
+    <corseSpecifications
+        coordinator="//@professor.7"
+        specificationYear="2019"
+        language="Norwegian"
+        version="1.0"
+        credits="7.5">
+      <semester>autumn</semester>
+    </corseSpecifications>
+  </course>
+  <course code="TDT4136"
+      name="Introduction to Artificial Intelligence">
+    <corseSpecifications
+        coordinator="//@professor.8"
+        specificationYear="2019"
+        language="English"
+        version="1.0">
+      <semester>autumn</semester>
+    </corseSpecifications>
+  </course>
+  <course code="TDT4237"
+      name="Software Security">
+    <corseSpecifications
+        coordinator="//@professor.9"
+        specificationYear="2019"
+        language="English"
+        version="1.0"
+        credits="7.5">
+      <semester>spring</semester>
+    </corseSpecifications>
+  </course>
+  <course code="IT3010"
+      name="Research-based Innovation Methodologies in Computer and Information Science">
+    <corseSpecifications
+        coordinator="//@professor.10"
+        specificationYear="2019"
+        language="Engligh, Norwegian"
+        version="1.0"
+        credits="7.5">
+      <semester>spring</semester>
+    </corseSpecifications>
+  </course>
+  <course code="TDT4240"
+      name="Software Architecture">
+    <corseSpecifications
+        coordinator="//@professor.11"
+        specificationYear="2019"
+        language="English"
+        version="1.0"
+        credits="7.5">
+      <semester>spring</semester>
+    </corseSpecifications>
+  </course>
+  <course code="TDT4257"
+      name="Digital Service Innovation">
+    <corseSpecifications
+        coordinator="//@professor.12"
+        specificationYear="2019"
+        language="English, Norwegian"
+        version="1.0"
+        credits="7.5">
+      <semester>spring</semester>
+    </corseSpecifications>
+  </course>
+  <course code="TDT4242"
+      name="Advanced Software Engineering">
+    <corseSpecifications
+        coordinator="//@professor.9"
+        specificationYear="2019"
+        language="English"
+        version="1.0"
+        credits="7.5">
+      <semester>spring</semester>
+    </corseSpecifications>
+  </course>
+  <professor
+      name="Frode Volden"
+      title="Senior Engineer"/>
+  <professor
+      name="Deepti Mishra"
+      title="Associate Professor"/>
+  <professor
+      name="Ahmet Soylu"
+      title="Associate Professor"/>
+  <professor
+      name="Pieter Jelle Toussaint"
+      title="Professor"/>
+  <professor
+      name="Hallvard Trætteberg"
+      title="Associate Professor"/>
+  <professor
+      name="John Krogstie"
+      title="Head of Department and Professor"/>
+  <professor
+      name="Øystein Nytrø"
+      title="Associate Professor"/>
+  <professor
+      name="Heri Ramampiaro"
+      title="Associate Professor"/>
+  <professor
+      name="Pinar Øzturk"
+      title="Associate Professor"/>
+  <professor
+      name="Jingyue Li"
+      title="Associate Professor"/>
+  <professor
+      name="Babak A. Farshchian"
+      title="Associate Professor"/>
+  <professor
+      name="Alf Inge Wang"
+      title="Professor"/>
+  <professor
+      name="Eric Monteiro"
+      title="Professor"/>
+  <professor
+      name="Dag Svanæs"
+      title="Professor"/>
+</no.tdt4250.assignment1.model:Department>

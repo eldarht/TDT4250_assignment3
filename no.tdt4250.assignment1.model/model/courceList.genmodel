@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/no.tdt4250.assignment1.model/src" modelPluginID="no.tdt4250.assignment1.model"
+    modelName="CourceList" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>courceList.ecore</foreignModel>
+  <genPackages prefix="CourceList" disposableProviderFactory="true" ecorePackage="courceList.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="courceList.ecore#//Semester">
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//Semester/autumn"/>
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//Semester/spring"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="courceList.ecore#//WorkForm">
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//WorkForm/oral"/>
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//WorkForm/written"/>
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//WorkForm/home"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="courceList.ecore#//EducationLevel">
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//EducationLevel/bachelor"/>
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//EducationLevel/master"/>
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//EducationLevel/phd"/>
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//EducationLevel/oneYear"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="courceList.ecore#//EvaluationType">
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//EvaluationType/grade"/>
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//EvaluationType/approved"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="courceList.ecore#//Campus">
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//Campus/Trondheim"/>
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//Campus/Gjøvik"/>
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//Campus/Web"/>
+      <genEnumLiterals ecoreEnumLiteral="courceList.ecore#//Campus/Ålesund"/>
+    </genEnums>
+    <genClasses ecoreClass="courceList.ecore#//Department">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference courceList.ecore#//Department/studyProgram"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference courceList.ecore#//Department/course"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference courceList.ecore#//Department/professor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Department/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Department/abbreviation"/>
+    </genClasses>
+    <genClasses ecoreClass="courceList.ecore#//Cource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Cource/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Cource/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Cource/location"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference courceList.ecore#//Cource/department"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference courceList.ecore#//Cource/corseSpecifications"/>
+    </genClasses>
+    <genClasses ecoreClass="courceList.ecore#//Student">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference courceList.ecore#//Student/studyProgram"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Student/nr"/>
+    </genClasses>
+    <genClasses ecoreClass="courceList.ecore#//StudyProgram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference courceList.ecore#//StudyProgram/cource"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference courceList.ecore#//StudyProgram/generalization"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference courceList.ecore#//StudyProgram/student"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//StudyProgram/year"/>
+    </genClasses>
+    <genClasses ecoreClass="courceList.ecore#//Exam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Exam/weight"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference courceList.ecore#//Exam/evaluationForm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Exam/form"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Exam/lenght"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Exam/date"/>
+    </genClasses>
+    <genClasses ecoreClass="courceList.ecore#//EvaluationForm">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference courceList.ecore#//EvaluationForm/exam"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference courceList.ecore#//EvaluationForm/work"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference courceList.ecore#//EvaluationForm/cource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//EvaluationForm/evaluationType"/>
+    </genClasses>
+    <genClasses ecoreClass="courceList.ecore#//Work">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Work/weight"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference courceList.ecore#//Work/evaluationForm"/>
+    </genClasses>
+    <genClasses ecoreClass="courceList.ecore#//StudyCourceRelation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference courceList.ecore#//StudyCourceRelation/cource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//StudyCourceRelation/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//StudyCourceRelation/year"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference courceList.ecore#//StudyCourceRelation/specialisation"/>
+    </genClasses>
+    <genClasses ecoreClass="courceList.ecore#//Professor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Professor/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Professor/title"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference courceList.ecore#//Professor/department"/>
+    </genClasses>
+    <genClasses ecoreClass="courceList.ecore#//Specialisation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference courceList.ecore#//Specialisation/cource"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference courceList.ecore#//Specialisation/studyProgram"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Specialisation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//Specialisation/startSemester"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference courceList.ecore#//Specialisation/furtherSpecialisation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference courceList.ecore#//Specialisation/hostSpecialisation"/>
+    </genClasses>
+    <genClasses ecoreClass="courceList.ecore#//CourceSpecification">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference courceList.ecore#//CourceSpecification/cource"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference courceList.ecore#//CourceSpecification/coordinator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference courceList.ecore#//CourceSpecification/evaluationForm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//CourceSpecification/specificationYear"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//CourceSpecification/semester"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//CourceSpecification/language"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//CourceSpecification/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//CourceSpecification/credits"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//CourceSpecification/name"
+          get="self.cource.name.concat(' (').concat(self.specificationYear.toString()).concat(')')"/>
+    </genClasses>
+    <genClasses ecoreClass="courceList.ecore#//StudyGeneralization">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference courceList.ecore#//StudyGeneralization/studyProgram"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference courceList.ecore#//StudyGeneralization/department"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//StudyGeneralization/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//StudyGeneralization/educationLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//StudyGeneralization/nrOfYears"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//StudyGeneralization/campus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute courceList.ecore#//StudyGeneralization/abbreviation"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

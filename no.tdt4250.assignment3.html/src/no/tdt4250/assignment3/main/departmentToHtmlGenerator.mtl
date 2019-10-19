@@ -1,0 +1,122 @@
+[comment encoding = UTF-8 /]
+[module departmentToHtmlGenerator('http://www.eclipse.org/emf/2002/Ecore', 'platform:/resource/no.tdt4250.assignment1.model/model/courceList.ecore')]
+
+
+[template public departmentToHtmlGenerator(aDepartment : Department)]
+[comment @main/]
+[file (aDepartment.name.replaceAll('\\s+','').concat('.html'), false, 'UTF-8')]
+<html>
+<head>
+	<title>[aDepartment.name/]</title>
+	[newMainCss()/]	[comment Create new css file/]
+	<link rel="stylesheet" href="./css/main.css">
+	<meta charset="utf-8"/>
+</head>
+<body>
+	<div class="container">
+		<h3>Studies</h3>
+		<ul>
+			[for (study : StudyGeneralization | aDepartment.studyProgram)]
+			[newStudyPage(study)/] 																		[comment Create a page for each study/]
+				<li> <a href="studies/[study.name.replaceAll('\\s+','')/]/index.html">[study.name/]</a> </li>		[comment Link study page/]
+			[/for]
+		</ul>
+	</div>
+</body>
+</html>
+
+[/file]
+
+[/template]
+
+[template public newStudyPage(study : StudyGeneralization)]
+[comment [let folderName: String =  'studies/' + study.name.replaceAll('\\s+','').concat('/')/]
+[file ('studies/' + study.name.replaceAll('\\s+','').concat('/index.html'), false, 'UTF-8')]	
+<html>
+<head>
+	<title>[study.name/]</title>
+	<link rel="stylesheet" href="../css/main.css">
+	<meta charset="utf-8"/>
+</head>
+<body>
+	<p>This is the front page of [study.name/]</p>
+	<h3>Versions</h3>
+	<ul>
+	[for(studyPart : StudyProgram | study.studyProgram)]
+		[newStudyYearPage(studyPart, 'studies/' + study.name.replaceAll('\\s+','')+'/')/]											
+		<li><a href="[studyPart.year/].html">Year: [studyPart.year/]</a></li>
+	[/for]
+	</ul>
+</body>
+</html>
+
+[/file]  
+[/template]
+[template public newStudyYearPage(study : StudyProgram, folderName: String)]
+[file (folderName + (study.year) + ('.html'), false, 'UTF-8')]	
+<html>
+<head>
+	<title>[study.year/]</title>
+	<link rel="stylesheet" href="../../css/main.css">
+	<meta charset="utf-8"/>
+</head>
+<body>
+	<h3>Programme components</h3>
+	[for (spec : Specialisation | study.cource)]
+		[newSpecialisationComponent(spec)/]
+	[/for]
+</body>
+</html>
+[/file]  
+[/template]
+
+
+[template public newSpecialisationComponent(spec: Specialisation)]
+	<h4>[spec.name/] - Semester [spec.startSemester/]</h4>
+	[let nrOfYears : EInt = spec.cource->sortedBy(year)->last().year]
+	
+	[for(I : Integer | Sequence{0,1,2,3,4,5,6,7,8,9,10}->select(number: Integer | number < nrOfYears))]
+		[let currentYearCources : OrderedSet(StudyCourceRelation) = spec.cource->select(year = I)]
+		<h4>Year: [I/]</h4>
+		<hr>
+		<h5>Mandatory</h5>
+		<table>
+			<th>Code</th><th>Name</th><th>sp</th><th>Status</th>
+			[for(c : StudyCourceRelation | currentYearCources->select(status = 'O' or status.substring(1,1) = 'M'))]
+				<tr><td>[c.cource.cource.code/]</td><td>[c.cource.cource.name/]</td><td>[c.cource.credits/]</td><td>[c.status/]</td></tr>
+			[/for]
+		</table>
+
+		<h5>Elective</h5>
+		<table>
+			<th>Code</th><th>Name</th><th>sp</th><th>Status</th>
+			[for(c : StudyCourceRelation | currentYearCources->select(status <> 'O' and status.substring(1,1) <> 'M'))]
+				<tr><td>[c.cource.cource.code/]</td><td>[c.cource.cource.name/]</td><td>[c.cource.credits/]</td><td>[c.status/]</td></tr>
+			[/for]
+		</table>
+	
+		[/let]
+	[/for]
+	[/let]	
+	<ul>
+		[for(furtherSpec :Specialisation | spec.furtherSpecialisation)]
+			[newSpecialisationComponent(furtherSpec)/]
+		[/for]
+	</ul>
+[/template]
+
+[template public newMainCss(traceabilityContext : OclAny)]
+[file ('css/main.css', false, 'UTF-8')]
+body{
+	margin: auto;
+}
+table {
+	border-collapse: collapse;
+	width: 50em;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+[/file]
+[/template]
